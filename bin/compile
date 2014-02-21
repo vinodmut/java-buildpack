@@ -22,6 +22,10 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'java_buildpack/buildpack'
 
 build_dir = ARGV[0]
+cache_dir = ARGV[1]
+
+printf "Build dir is %s\n", build_dir
+printf "Cache dir is %s\n", cache_dir
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
