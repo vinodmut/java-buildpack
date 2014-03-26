@@ -52,6 +52,6 @@ end
 #printf "-- Exiting compile\n"
 #printf "Build dir is %s\n", build_dir
 #printf "Cache dir is %s\n", cache_dir
-#system("find #{build_dir}")
-#system("find #{cache_dir}")
+system("find #{build_dir}")
+system("find #{cache_dir}")
 
