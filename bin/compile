@@ -26,6 +26,7 @@ cache_dir = ARGV[1]
 
 STDOUT.sync = true
 printf "-- Enter compile\n"
+printf "pwd is %s\n", Dir.pwd
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
 system("wget http://www.google.com/images/srpr/logo11w.png")
