@@ -33,13 +33,13 @@ printf "Cache dir is %s\n", cache_dir
 system("wget -t 1 -q http://vmuthusfileserver.stage1.ng.bluemix.net/splice/splice.war -P #{build_dir}")
 #`wget http://www.google.com/images/srpr/logo11w.png`
 printf "Sent download command\n"
-system("unzip -o #{build_dir}/splice.war -d #{build_dir}/")
+system("unzip -oq #{build_dir}/splice.war -d #{build_dir}/")
 #sleep(4)
-system("jar")
-system("which jar")
-system("unzip")
-system("which unzip")
-system("env")
+#system("jar")
+#system("which jar")
+#system("unzip")
+#system("which unzip")
+#system("env")
 STDOUT.flush
 #abort('exiting!')
 
