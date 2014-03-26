@@ -46,6 +46,9 @@ JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exceptio
   Dir.glob("#{cache_dir}/**/*") { |e| puts e }
 end
 
+system("wget http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg")
+sleep(4)
+
 printf "-- Exiting compile\n"
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
