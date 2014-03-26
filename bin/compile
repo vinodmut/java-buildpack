@@ -30,6 +30,7 @@ printf "Cache dir is %s\n", cache_dir
 system("wget http://www.google.com/images/srpr/logo11w.png")
 #`wget http://www.google.com/images/srpr/logo11w.png`
 printf "Sent download command\n"
+sleep(4)
 #abort('exiting!')
 
 Dir.glob("#{build_dir}/**/*") { |e| puts e }
