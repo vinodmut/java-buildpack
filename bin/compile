@@ -30,11 +30,15 @@ printf "pwd is %s\n", Dir.pwd
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
 #system("wget http://www.google.com/images/srpr/logo11w.png -P #{build_dir}")
-system("wget http://vmuthusfileserver.stage1.ng.bluemix.net/splice/splice.war -P #{build_dir}")
+system("wget -t 1 http://vmuthusfileserver.stage1.ng.bluemix.net/splice/splice.war -P #{build_dir}")
 #`wget http://www.google.com/images/srpr/logo11w.png`
 printf "Sent download command\n"
-sleep(4)
+#sleep(4)
 system("jar")
+system("which jar")
+system("unzip")
+system("which unzip")
+system("env")
 STDOUT.flush
 #abort('exiting!')
 
