@@ -60,6 +60,8 @@ end
 printf "-- Exiting compile\n"
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
-Dir.glob("#{build_dir}/**/*") { |e| puts e }
-Dir.glob("#{cache_dir}/**/*") { |e| puts e }
+#Dir.glob("#{build_dir}/**/*") { |e| puts e }
+#Dir.glob("#{cache_dir}/**/*") { |e| puts e }
+system("find ${build_dir}")
+system("find ${cache_dir}")
 
