@@ -41,4 +41,6 @@ JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exceptio
   Dir.glob("#{cache_dir}/**/*") { |e| puts e }
 end
 
-
+printf "-- Exiting compile\n"
+printf "Build dir is %s\n", build_dir
+printf "Cache dir is %s\n", cache_dir
