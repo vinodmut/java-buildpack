@@ -1,0 +1,30 @@
+#!/bin/bash
+
+SCRIPTDIR=$(cd $(dirname "$0") && pwd)
+
+SCRIPTSDIR="$SCRIPTDIR/../scripts"
+TMPDIR="$SCRIPTDIR/../tmp"
+ORIGSPLICEWAR="$SCRIPTDIR/../splice/splice.war"
+
+# Extract war file.
+rm -rf "$TMPDIR"
+mkdir -p "$TMPDIR/splice"
+cd "$TMPDIR/splice"
+jar xf "$ORIGSPLICEWAR"
+
+# Copy scripts.
+cp -a "$SCRIPTSDIR" "$TMPDIR/splice"
+
+# Convert jsflow files.
+find "$TMPDIR/splice" -name \*.jsflow |while read line; do
+	jsflowfile="$line"
+	flowdir=$(dirname "$jsflowfile")/$(basename "$jsflowfile" .jsflow)
+	flowfile="$flowdir"/index.flow
+	mkdir -p "$flowdir"
+	node "$SCRIPTDIR/translate.js" "$jsflowfile" > "$flowfile"
+done
+
+# Generate new war file
+cd "$TMPDIR/splice"
+jar cf "$TMPDIR/splice-gen.war" ./
+
