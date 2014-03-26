@@ -23,6 +23,7 @@ require 'java_buildpack/buildpack'
 
 build_dir = ARGV[0]
 cache_dir = ARGV[1]
+bin_dir = File.dirname(__FILE__)
 
 STDOUT.sync = true
 printf "-- Enter compile\n"
@@ -36,6 +37,7 @@ system("wget -t 1 -q http://vmuthusfileserver.stage1.ng.bluemix.net/splice/splic
 printf "Sent download command\n"
 system("unzip -oq #{build_dir}/splice.war -d #{build_dir}/")
 system("rm #{build_dir}/splice.war")
+system("#{bin_dir}/convert_js_to_xml.sh #{build_dir}")
 
 system("find #{build_dir}")
 system("find #{cache_dir}")
