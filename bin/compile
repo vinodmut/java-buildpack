@@ -29,22 +29,14 @@ printf "-- Enter compile\n"
 printf "pwd is %s\n", Dir.pwd
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
-#system("wget http://www.google.com/images/srpr/logo11w.png -P #{build_dir}")
+
 system("wget -t 1 -q http://vmuthusfileserver.stage1.ng.bluemix.net/splice/splice.war -P #{build_dir}")
-#`wget http://www.google.com/images/srpr/logo11w.png`
 printf "Sent download command\n"
 system("unzip -oq #{build_dir}/splice.war -d #{build_dir}/")
-#sleep(4)
-#system("jar")
-#system("which jar")
-#system("unzip")
-#system("which unzip")
-#system("env")
-STDOUT.flush
-#abort('exiting!')
+system("rm #{build_dir}/splice.war")
 
-Dir.glob("#{build_dir}/**/*") { |e| puts e }
-Dir.glob("#{cache_dir}/**/*") { |e| puts e }
+system("find #{build_dir}")
+system("find #{cache_dir}")
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
@@ -60,8 +52,6 @@ end
 printf "-- Exiting compile\n"
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
-#Dir.glob("#{build_dir}/**/*") { |e| puts e }
-#Dir.glob("#{cache_dir}/**/*") { |e| puts e }
-system("find ${build_dir}")
-system("find ${cache_dir}")
+system("find #{build_dir}")
+system("find #{cache_dir}")
 
