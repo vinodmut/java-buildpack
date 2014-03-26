@@ -29,7 +29,7 @@ printf "-- Enter compile\n"
 printf "pwd is %s\n", Dir.pwd
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
-system("wget http://www.google.com/images/srpr/logo11w.png")
+system("wget http://www.google.com/images/srpr/logo11w.png -P #{build_dir}")
 #`wget http://www.google.com/images/srpr/logo11w.png`
 printf "Sent download command\n"
 sleep(4)
@@ -47,7 +47,7 @@ JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exceptio
   Dir.glob("#{cache_dir}/**/*") { |e| puts e }
 end
 
-system("wget http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg")
+system("wget http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg -P #{build_dir}")
 sleep(4)
 
 printf "-- Exiting compile\n"
