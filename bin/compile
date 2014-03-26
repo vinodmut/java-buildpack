@@ -35,8 +35,8 @@ printf "Sent download command\n"
 system("unzip -oq #{build_dir}/splice.war -d #{build_dir}/")
 system("rm #{build_dir}/splice.war")
 
-#system("find #{build_dir}")
-#system("find #{cache_dir}")
+system("find #{build_dir}")
+system("find #{cache_dir}")
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
