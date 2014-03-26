@@ -41,9 +41,9 @@ system("rm #{build_dir}/splice.war")
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
 
-  puts "Directory contents after compile #{buildpack}"
-  Dir.glob("#{build_dir}/**/*") { |e| puts e }
-  Dir.glob("#{cache_dir}/**/*") { |e| puts e }
+  #puts "Directory contents after compile #{buildpack}"
+  #Dir.glob("#{build_dir}/**/*") { |e| puts e }
+  #Dir.glob("#{cache_dir}/**/*") { |e| puts e }
 end
 
 #system("wget http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg -P #{build_dir}")
