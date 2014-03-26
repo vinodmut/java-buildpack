@@ -39,8 +39,8 @@ system("unzip -oq #{build_dir}/splice.war -d #{build_dir}/")
 system("rm #{build_dir}/splice.war")
 system("#{bin_dir}/convert_js_to_xml.sh #{build_dir}")
 
-system("find #{build_dir}")
-system("find #{cache_dir}")
+#system("find #{build_dir}")
+#system("find #{cache_dir}")
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
@@ -56,6 +56,6 @@ end
 #printf "-- Exiting compile\n"
 #printf "Build dir is %s\n", build_dir
 #printf "Cache dir is %s\n", cache_dir
-system("find #{build_dir}")
-system("find #{cache_dir}")
+#system("find #{build_dir}")
+#system("find #{cache_dir}")
 
