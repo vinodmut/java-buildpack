@@ -27,7 +27,9 @@ cache_dir = ARGV[1]
 printf "-- Enter compile\n"
 printf "Build dir is %s\n", build_dir
 printf "Cache dir is %s\n", cache_dir
-`wget http://www.google.com/images/srpr/logo11w.png`
+system("wget http://www.google.com/images/srpr/logo11w.png")
+#`wget http://www.google.com/images/srpr/logo11w.png`
+printf "Sent download command\n"
 #abort('exiting!')
 
 Dir.glob("#{build_dir}/**/*") { |e| puts e }
